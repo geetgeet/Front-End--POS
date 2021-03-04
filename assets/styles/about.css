@@ -1,0 +1,33 @@
+.about {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about > div,
+.about > img {
+  width: 50%;
+}
+
+.about > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10%;
+}
+/* Media query to change display options of about section */
+@media screen and (max-width: 768px) {
+  .about {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
+  .about > div,
+  .about > img {
+    width: 100%;
+  }
+
+  .about > div:nth-child(odd) {
+    background-color: #e9c46a;
+  }
+}

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <!-- <link rel="stylesheet" href="./assets/styles/preloader.css" />-->
+    <link rel="stylesheet" href="./assets/styles/navigation.css" />
+    <!-- <link rel="stylesheet" href="./assets/styles/landing.css"-->
+    <link rel="stylesheet" href="./assets/styles/about.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- Preloader <div class="preloader">
+      <div class="loader"></div>
+    </div> -->
+
+    <!-- Navigation Section -->
+    <nav class="navbar">
+      <img src="..." alt="Logo" class="logo" />
+      <ul class="nav-links" id="nav-links">
+        <li class="nav-link"><a href="./index.html">Home</a></li>
+        <li class="nav-link"><a href="#about">About</a></li>
+        <li class="nav-link"><a href="./blogs.html">All Products</a></li>
+      </ul>
+      <button class="hamburger" onclick="toggleNav()">Menu</button>
+    </nav>
+    <!-- Landing Page Section -->
+    <style>
+      html {
+        height: 100vh;
+      }
+      body {
+        background-color: teal;
+      }
+      /*.landing {
+        height: 100vh;
+      }*/
+
+      .items-scroll {
+        background-color: whitesmoke;
+        width: 60%;
+        height: 40vh;
+        overflow: auto;
+      }
+      #items {
+        display: grid;
+        grid-template-columns: auto auto auto;
+      }
+      .items-scroll #items ul {
+        height: 200px;
+        width: 18%;
+        list-style-type: none;
+      }
+      .items-scroll #items {
+        overflow: auto;
+        overflow-y: scroll;
+      }
+      .reciept {
+        background-color: tomato;
+      }
+      .control-panel {
+        background-color: thistle;
+      }
+
+      html {
+        height: 100vh;
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      /* Style the header */
+      header {
+        background-color: #666;
+        padding: 30px;
+        text-align: center;
+        font-size: 35px;
+        color: white;
+      }
+
+      /* Create two columns/boxes that floats next to each other */
+      .reciept {
+        float: right;
+        width: 30%;
+        height: 300px; /* only for demonstration, should be removed */
+        background: #ccc;
+        padding: 20px;
+      }
+
+      /* Style the list inside the menu */
+      .reciept ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .items-scroll {
+        background-color: whitesmoke;
+        width: 100%;
+        height: 40vh;
+        overflow: auto;
+      }
+      #li-items {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        list-style-type: none;
+      }
+      .items-scroll #items ul {
+        height: 200px;
+        width: 18%;
+      }
+      .items-scroll #items {
+        overflow: auto;
+        overflow-y: scroll;
+      }
+      
+      .control-panel {
+        float: left;
+        padding: 20px;
+        width: 100vw;
+        background-color: #f1f1f1;
+        height: 300px; /* only for demonstration, should be removed */
+      }
+
+      /* Clear floats after the columns */
+      section::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* Style the footer */
+      footer {
+        background-color: #777;
+        padding: 10px;
+        text-align: center;
+        color: white;
+      }
+
+      .product-container {
+        position: relative;
+        height: 200px;
+        max-width: 300px;
+        margin: 3px auto 3px;
+      }
+
+      .li-image {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .icon-overlay {
+        position: absolute;
+        top: 0;
+        /*background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);*/ /* Black see-through */
+        color: #f1f1f1;
+        width: 100%;
+        height: 100%;
+        transition: 0.5s ease;
+        opacity: 1;
+        color: white;
+        font-size: 20px;
+        /*padding: 20px;*/
+        /*text-align: center;*/
+      }
+
+      .icon-overlay i {
+        position: absolute;
+        /*top: 8px;
+  left: 16px;
+  font-size: 18px;*/
+        background: rgb(0, 0, 0);
+        background: rgb(0, 0, 0, 0.5);
+      }
+      .icon-overlay p {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        /*font-size: 18px;*/
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .li-image {
+        background-color: orchid;
+        height: 100%;
+        width: 100%;
+      }
+      .control-btn {
+        display: inline-block;
+        padding: 15px 25px;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #4caf50;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+      }
+
+      .control-btn:hover {
+        background-color: #3e8e41;
+      }
+
+      .control-btn:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+.admin-table{
+  background-color: antiquewhite;
+height: 50vh;
+overflow: auto;
+}
+.items-table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.items-table td, .items-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.items-table tr:nth-child(even){background-color: #f2f2f2;}
+
+.items-table tr:hover {background-color: #ddd;}
+
+.items-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+.table-head{
+
+}
+      /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+      @media (max-width: 600px) {
+        .reciept,
+        .scroll-items,
+        .control-panel {
+          width: 100%;
+          /*height: auto;*/
+        }
+        #li-items {
+          display: list-item;
+        }
+      }
+    </style>
+    <section class="landing">
+
+    <h2>Records</h2>
+    <div class="admin-table">
+        <table class="items-table" id="table-items">
+          <tr class="table-head">
+            <th>Product Id</th>
+            <th>Product (Name)</th>
+            <th>Price</th>
+            <th>Brand</th>
+            <th>Image Souce</th>
+          
+        <th>Delete</th>
+        <th>Edit</th></tr>
+            <tr >
+                <tr>
+                    <td>${product.id}</td>
+                    <td>${product.product_name}</td>
+                    <td>${product.price}</td>
+                    <td>${product.brand}</td>
+                    <td>${product.picture}</td>
+                <td><a href="https://shielded-woodland-34724.herokuapp.com/delete-item/<int:product_id>/">Delete</a> </td>
+                <td><a href="/edit-item/{{recors[0]}}">Edit</a></td>
+ </tr>
+
+            </tr>
+    </table>
+
+
+        <!--<div>
+        <h1>Items</h1>
+        <div>
+          <table class="items-table" id="table-items">
+            <tr>
+              <th>Product Id</th>
+              <th>Product (Name)</th>
+              <th>Price</th>
+              <th>Brand</th>
+              <th>Image Souce</th>
+            </tr>
+            <tr>
+              <td>${product.id}</td>
+              <td>${product.product_name}</td>
+              <td>${product.price}</td>
+              <td>${product.brand}</td>
+              <td>${product.picture}</td>
+            </tr>
+
+
+           <li>
+              <div class="product-container">
+                <img src="img_avatar.png" class="li-image" />
+                <div class="icon-overlay">
+                  <i class="fa fa-close"></i>
+                  <p>price</p>
+                  <p></p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="product-container">
+                <img src="img_avatar.png" class="li-image" />
+                <div class="icon-overlay">
+                  <i class="fa fa-close"></i>
+                  <p>price</p>
+                  <p></p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="product-container">
+                <img src="img_avatar.png" class="li-image" />
+                <div class="icon-overlay">
+                  <i class="fa fa-close"></i>
+                  <p>price</p>
+                  <p></p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="product-container">
+                <img src="img_avatar.png" class="li-image" />
+                <div class="icon-overlay">
+                  <i class="fa fa-close"></i>
+                  <p>price</p>
+                  <p></p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="product-container">
+                <img src="img_avatar.png" class="li-image" />
+                <div class="icon-overlay">
+                  <i class="fa fa-close"></i>
+                  <p>price</p>
+                  <p></p>
+                </div>
+              </div>
+            </li>
+           -->
+          </table>
+        </div>
+
+       
+        <div class="control-panel">
+          <h1>Control Panel</h1>
+          <button class="control-btn" onclick="">Check out</button>
+          <button
+            class="control-btn"
+            onclick="window.location.href='add-item.html'"
+          >
+            Add new Item
+          </button>
+          <button
+            href="admin.html"
+            target="blank"
+            class="control-btn"
+            onclick="window.location.href='index.html'"
+          >
+            Back to items
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Script Imports -->
+    <script src="./assets/scripts/navigation.js"></script>
+  </body>
+</html>
+<script>
+  /* -- FETCH FUNCRIONS--*/
+  function getPosts() {
+    // Get element to change
+
+    // Fetch the data
+    fetch("http://127.0.0.1:5000/show-records/")
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        json.forEach((item) => createtr(item));
+      });
+  }
+
+  function createtr(product) {
+    const tableitem = ` <tr data-id=${ product.id }>
+                <td>${product.id}</td>
+                <td><input name="product_name" type='text' value="${product.product_name}" ></td>
+                <td><input name="price" type='text' value="${product.price}" placeholder="Currently:R${product.price}"></td>
+                <td><input name="brand" type='text' value="${product.brand}"></td>
+                <td><input name="picture" type='text' value="${product.picture}"></td>
+                <td><button type="button" onclick="deleteValues(${ product.id })">Delete</button> </td>
+                <td><button type="button" onclick="editValues(${ product.id })">Edit</button></td>
+            </tr>`;
+    let list = document.getElementById("table-items");
+    console.log("Hello");
+    list.innerHTML += tableitem;
+  }
+
+  getPosts();
+  function admin() {}
+
+  function deleteValues(id){
+    
+    if (confirm('Are you sure you want to DELETE item from database?')) {
+
+  fetch(`http://127.0.0.1:5000/delete-item/${ id }/`, {method: "DELETE"})
+     console.log(id);
+} else {
+  alert("cancel")
+
+  console.log('Thing was not saved to the database.');
+}
+    
+    // let item = document.querySelector(`[data-id="${ id }"]`);
+    // console.log(item);
+  }
+
+  function editValues(id){
+
+    fetch(`http://127.0.0.1:5000/edit-item/${ id }/`, {  mode: 'no-cors',method: "POST"})
+    console.log(id);
+  }
+
+  /* --ADMIN FUNCTION--*/
+</script>
